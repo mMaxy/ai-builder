@@ -4,10 +4,55 @@
     <title>Details of {{ network.name }}</title>
 </head>
 <body>
+<a href="{% url 'ai.views.index' %}">В начало</a>
 
-<p>
-    you are looking at {{ network.name }}, {{ network.date }}, {{ network.email }}, {{ network.inputs.readlines }}
-</p>
+<h1>
+    {{ network.name }}
+</h1>
+
+{% if network.done %}
+
+    <h3>
+        {% if sr1.recurrent %} Recurrent {% endif %}
+        {{ sr1.hidden_layer }} - {{ sr1.output_layer }} {% if sr1.bias %} With Bias {% endif %}
+    </h3>
+    <p>
+        Ошибка: {{ sr1.best_run }} %
+    </p>
+    <p>
+        Количество эпох: {{ sr1.total_runs }}
+    </p>
+    <a href="{{ sr1.getURL }}">Загрузить</a>
+
+    <h3>
+        {% if sr2.recurrent %} Recurrent {% endif %}
+        {{ sr2.hidden_layer }} - {{ sr2.output_layer }} {% if sr2.bias %} With Bias {% endif %}
+    </h3>
+    <p>
+        Ошибка: {{ sr2.best_run }} %
+    </p>
+    <p>
+        Количество эпох: {{ sr2.total_runs }}
+    </p>
+    <a href="{{ sr2.getURL }}">Загрузить</a>
+
+    <h3>
+        {% if sr3.recurrent %} Recurrent {% endif %}
+        {{ sr3.hidden_layer }} - {{ sr3.output_layer }} {% if sr3.bias %} With Bias {% endif %}
+    </h3>
+    <p>
+        Ошибка: {{ sr3.best_run }} %
+    </p>
+    <p>
+        Количество эпох: {{ sr3.total_runs }}
+    </p>
+    <a href="{{ sr3.getURL }}">Загрузить</a>
+
+{% endif %}
+{% if not network.done %}
+    <p>Nothing ready yet</p>
+{% endif %}
+
 
 </body>
 </html>

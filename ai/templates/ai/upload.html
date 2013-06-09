@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Загрузить данные для нейронной сети</title>
 </head>
 <body>
-
-    {% if networks %}
-        <ul>
-        {% for network in networks %}
-            <li><a href="{{ network.inputs.url }}">{{ network.inputs.name }}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No networks.</p>
-    {% endif %}
-
+<h1>
+    Здесь вы можете загрузить данные для вашей нейронной сети!
+</h1>
 <!-- Upload form. Note enctype attribute! -->
-        <form action="{% url "upload" %}" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <p>{{ form.non_field_errors }}</p>
-            <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
-            <p>
-                {{ form.docfile.errors }}
-                {{ form.docfile }}
-            </p>
-            <p>
-                <input type="text" name="title">
-                <input type="file" name="file" />
-                <input type="submit" value="Upload" />
-            </p>
-        </form>
+<form action="{% url "upload" %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>
+        Name:
+        <input type="text" name="title">
+    </p>
+
+    <p>
+        Your file:
+        <input type="file" name="file"/>
+    </p>
+
+    <p>
+        <input type="submit" value="Upload"/>
+    </p>
+</form>
 
 </body>
 </html>
