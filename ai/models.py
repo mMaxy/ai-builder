@@ -27,6 +27,14 @@ class NN(models.Model):
     def __unicode__(self):
         return self.name
 
+    def getCompletion(self):
+        a = []
+        #TODO count done
+        return 60
+
+    def anotherGeneration(self):
+        a = []
+
     def handle_uploaded_file(self, f):
         destination = open(self.inputs.__str__(), 'wb+')
         for chunk in f.chunks():
@@ -122,7 +130,11 @@ class GA(models.Model):
     populations = models.PositiveIntegerField(null=True, blank=True)
     networks = 0
 
-    func = [GaussianLayer, SigmoidLayer, SoftmaxLayer, LinearLayer, TanhLayer, LSTMLayer]
+    func = [GaussianLayer, SigmoidLayer, SoftmaxLayer, LinearLayer, TanhLayer]
+
+    def getCompletion(self):
+        a = []
+        return 25
 
     def getURL(self):
         return 'http://127.0.0.1:8000/ai/' + str(self.net.id) + '/' + str(self.name)

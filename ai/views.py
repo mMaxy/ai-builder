@@ -6,6 +6,7 @@ from django.shortcuts import render, get_object_or_404, render_to_response
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.template import Context, RequestContext
+from django import forms
 
 from ai.forms import UploadFileForm
 from ai.models import NN, GA, Network
@@ -18,9 +19,17 @@ def index(request):
 
 
 def details(request, nw_id):
+    if request.method == 'POST':
+        nn = get_object_or_404(NN, pk=nw_id)
+        nn.anotherGeneration()
     nw = get_object_or_404(NN, pk=nw_id)
     gas = GA.objects.filter(net=nw_id)
-    return render(request, 'ai/details.html', {'network': nw, 'gas': gas})
+    return render_to_response(
+        'ai/details.html',
+        {'form': forms.BaseForm, 'network': nw, 'gas': gas},
+        context_instance=RequestContext(request)
+    )
+    #return render(request, 'ai/details.html', {'network': nw, 'gas': gas, 'form': forms.BaseForm})
 
 
 def detailsGA(request, nw_id, ga_id):

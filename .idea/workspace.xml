@@ -2,25 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25494cb8-8a05-44a7-936b-895142bf8f42" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/templates/ai/details.html" afterPath="$PROJECT_DIR$/ai/templates/ai/details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/templates/ai/details_ga.html" afterPath="$PROJECT_DIR$/ai/templates/ai/details_ga.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/templates/ai/index.html" afterPath="$PROJECT_DIR$/ai/templates/ai/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/models.py" afterPath="$PROJECT_DIR$/ai/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/views.py" afterPath="$PROJECT_DIR$/ai/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="coursework.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/settings.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1368168906293" ignored="false" />
-    <file path="/models.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380179854633" ignored="false" />
+    <file path="/models.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380229859494" ignored="false" />
     <file path="/Django Console" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380142326383" ignored="false" />
     <file path="/urls.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380173776487" ignored="false" />
-    <file path="/views.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380181503796" ignored="false" />
-    <file path="/index.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380171700043" ignored="false" />
-    <file path="/details.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380168984707" ignored="false" />
+    <file path="/views.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380232260616" ignored="false" />
+    <file path="/index.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380228971086" ignored="false" />
+    <file path="/details.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380232457551" ignored="false" />
     <file path="/forms.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380172926426" ignored="false" />
     <file path="/upload.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380155713430" ignored="false" />
-    <file path="/Dummy.txt" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380182476708" ignored="false" />
+    <file path="/Dummy.txt" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380227687621" ignored="false" />
     <file path="/a.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380128919571" ignored="false" />
     <file path="/start_script.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380128937501" ignored="false" />
     <file path="/detailsga.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380169797903" ignored="false" />
     <file path="/detail_net.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380171431477" ignored="false" />
-    <file path="/details_ga.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380172222945" ignored="false" />
+    <file path="/details_ga.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380236181752" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,16 +48,16 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="353" column="0" selection-start="13163" selection-end="13163" vertical-scroll-proportion="0.0">
+            <state line="35" column="0" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="23" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.8435013">
+            <state line="21" column="0" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#26#48#0" expanded="true" />
               </folding>
@@ -60,20 +65,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail_net.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ai/templates/ai/detail_net.html">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ai/templates/ai/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="18" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="105" column="87" selection-start="4306" selection-end="4306" vertical-scroll-proportion="-36.708332">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ai/templates/ai/index.html">
+      <file leaf-file-name="details.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ai/templates/ai/details.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="20" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="57" column="25" selection-start="2149" selection-end="2149" vertical-scroll-proportion="-16.708334">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details_ga.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ai/templates/ai/details_ga.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="41" selection-start="2244" selection-end="2244" vertical-scroll-proportion="0.49001816">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,25 +101,7 @@
       <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="61" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ai/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="72" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="details_ga.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ai/templates/ai/details_ga.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="4" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
+            <state line="0" column="24" selection-start="0" selection-end="24" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -128,16 +130,16 @@
         <option value="$PROJECT_DIR$/coursework/urls.py" />
         <option value="$PROJECT_DIR$/ai/templates/ai/base.html" />
         <option value="$PROJECT_DIR$/coursework/settings.py" />
-        <option value="$PROJECT_DIR$/ai/templates/ai/upload.html" />
-        <option value="$PROJECT_DIR$/ai/templates/ai/details.html" />
         <option value="$PROJECT_DIR$/ai/templates/ai/detailsga.html" />
         <option value="$PROJECT_DIR$/ai/templates/ai/detail_net.html" />
-        <option value="$PROJECT_DIR$/ai/templates/ai/index.html" />
-        <option value="$PROJECT_DIR$/ai/templates/ai/details_ga.html" />
         <option value="$PROJECT_DIR$/ai/forms.py" />
         <option value="$PROJECT_DIR$/ai/urls.py" />
+        <option value="$PROJECT_DIR$/ai/templates/ai/index.html" />
         <option value="$PROJECT_DIR$/ai/models.py" />
+        <option value="$PROJECT_DIR$/ai/templates/ai/upload.html" />
         <option value="$PROJECT_DIR$/ai/views.py" />
+        <option value="$PROJECT_DIR$/ai/templates/ai/details.html" />
+        <option value="$PROJECT_DIR$/ai/templates/ai/details_ga.html" />
       </list>
     </option>
   </component>
@@ -279,14 +281,14 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="appearance" />
+    <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last.edited.regexp" value="" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="last.edited.regexp" value="" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -384,6 +386,13 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
       <JSDebuggerConfigurationSettings>
         <option name="engineId" value="embedded" />
@@ -465,7 +474,11 @@
       <created>1380182480473</created>
       <updated>1380182480473</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Слил">
+      <created>1380182638942</created>
+      <updated>1380182638942</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -490,23 +503,23 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="25" width="1372" height="745" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327787" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17427702" sideWeight="0.6756303" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24621212" sideWeight="0.67278796" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17727272" sideWeight="0.67221296" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933443" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4223706" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.327212" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24126455" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32612312" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294509" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -574,37 +587,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="17" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/coursework/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="11" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ai/templates/ai/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/templates/ai/details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="7" selection-start="315" selection-end="315" vertical-scroll-proportion="0.51724136" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/templates/ai/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="7" selection-start="346" selection-end="346" vertical-scroll-proportion="0.35390198" />
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/django/db/models/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="500" column="0" selection-start="22078" selection-end="22078" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="500" column="0" selection-start="22078" selection-end="22078" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file:///usr/lib/python2.7/multiprocessing/process.py">
@@ -622,44 +616,14 @@
         <state line="45" column="0" selection-start="1417" selection-end="1417" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="72" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/templates/ai/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/templates/ai/details_ga.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ai/templates/ai/detail_net.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="18" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="19" column="18" selection-start="299" selection-end="299" vertical-scroll-proportion="0.51724136" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/forms.py">
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/core/handlers/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="61" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="353" column="0" selection-start="13163" selection-end="13163" vertical-scroll-proportion="0.0">
+        <state line="254" column="0" selection-start="8410" selection-end="8410" vertical-scroll-proportion="0.6">
           <folding />
         </state>
       </provider>
@@ -671,11 +635,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ai/templates/ai/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="20" selection-start="318" selection-end="318" vertical-scroll-proportion="-6.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="24" selection-start="0" selection-end="24" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/templates/ai/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="87" selection-start="4306" selection-end="4306" vertical-scroll-proportion="-36.708332">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="77" selection-start="356" selection-end="363" vertical-scroll-proportion="0.1826087">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ai/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="23" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.8435013">
+        <state line="21" column="0" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#26#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/templates/ai/details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="25" selection-start="2149" selection-end="2149" vertical-scroll-proportion="-16.708334">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/templates/ai/details_ga.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="41" selection-start="2244" selection-end="2244" vertical-scroll-proportion="0.49001816">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
