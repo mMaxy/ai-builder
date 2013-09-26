@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25494cb8-8a05-44a7-936b-895142bf8f42" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ai/templates/ai/detail_net.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ai/templates/ai/details_ga.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/documents/Anketa_posetitelya_kofeyni_Starbucks.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/documents/NVIDIA-Linux-x86_64-310.44.run" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/templates/ai/details.html" afterPath="$PROJECT_DIR$/ai/templates/ai/details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/forms.py" afterPath="$PROJECT_DIR$/ai/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/templates/ai/index.html" afterPath="$PROJECT_DIR$/ai/templates/ai/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/models.py" afterPath="$PROJECT_DIR$/ai/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neurals.db" afterPath="$PROJECT_DIR$/neurals.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/templates/ai/upload.html" afterPath="$PROJECT_DIR$/ai/templates/ai/upload.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/urls.py" afterPath="$PROJECT_DIR$/ai/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/views.py" afterPath="$PROJECT_DIR$/ai/views.py" />
+    <list default="true" id="25494cb8-8a05-44a7-936b-895142bf8f42" name="Default" comment="Переделал все, нормальный генетический алгоритм, пропала параллельность">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="coursework.iws" />
@@ -27,7 +15,7 @@
     <file path="/details.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380168984707" ignored="false" />
     <file path="/forms.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380172926426" ignored="false" />
     <file path="/upload.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380155713430" ignored="false" />
-    <file path="/Dummy.txt" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380179424440" ignored="false" />
+    <file path="/Dummy.txt" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380181939722" ignored="false" />
     <file path="/a.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380128919571" ignored="false" />
     <file path="/start_script.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380128937501" ignored="false" />
     <file path="/detailsga.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380169797903" ignored="false" />
@@ -64,7 +52,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="20" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.111801244">
+            <state line="60" column="23" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.8435013">
               <folding>
                 <element signature="e#26#48#0" expanded="true" />
               </folding>
@@ -75,7 +63,7 @@
       <file leaf-file-name="detail_net.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/templates/ai/detail_net.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="18" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+            <state line="19" column="18" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -102,7 +90,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="53" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
+            <state line="11" column="72" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -469,7 +457,11 @@
       <created>1370812135138</created>
       <updated>1370812135138</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Переделал все, нормальный генетический алгоритм, пропала параллельность">
+      <created>1380181891726</created>
+      <updated>1380181891726</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -496,21 +488,21 @@
     <frame x="-3" y="25" width="1372" height="745" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17427702" sideWeight="0.6756303" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24621212" sideWeight="0.5790349" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24621212" sideWeight="0.67278796" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933443" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42096505" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327787" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4223706" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.327212" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294509" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -558,7 +550,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Course work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Переделал все, нормальный генетический алгоритм, пропала параллельность" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -573,6 +565,7 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="Course work" />
+    <MESSAGE value="Переделал все, нормальный генетический алгоритм, пропала параллельность" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -626,7 +619,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="53" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
+        <state line="11" column="72" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -647,7 +640,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/templates/ai/detail_net.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="18" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+        <state line="19" column="18" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -675,7 +668,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="20" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.111801244">
+        <state line="60" column="23" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.8435013">
           <folding>
             <element signature="e#26#48#0" expanded="true" />
           </folding>
