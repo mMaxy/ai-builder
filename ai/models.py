@@ -1,23 +1,28 @@
 import pickle
 import os
 import multiprocessing
+import math
 
+from django.utils import timezone
 from django.db import models
-from pybrain.tools.shortcuts import buildNetwork
 from pybrain.structure import GaussianLayer, LSTMLayer, SigmoidLayer, SoftmaxLayer, LinearLayer, TanhLayer
-from pybrain.datasets import SupervisedDataSet, SequentialDataSet, ClassificationDataSet
+from random import random
+from pybrain.structure import FeedForwardNetwork, RecurrentNetwork, FullConnection
+from pybrain.datasets import ClassificationDataSet, SupervisedDataSet
 from pybrain.supervised.trainers import BackpropTrainer
+from coursework import settings
 
-# Create your models here.
 
-
-class Network(models.Model):
+class NN(models.Model):
+    dsTypes = (('SV', 'supervised'), ('CL', 'classification'), )
     name = models.CharField(max_length=50)
     date = models.DateTimeField('run date')
     inputs = models.FileField(upload_to='documents')
     email = models.EmailField()
-    sequential = models.BooleanField()
-    done = models.BooleanField(default=False)
+    typeDS = models.CharField(max_length=2, choices=dsTypes, default='SV')
+    populationSize = models.PositiveIntegerField()
+    numberOfNeurons = models.PositiveIntegerField()
+    epochCount = models.PositiveIntegerField()
 
     def __unicode__(self):
         return self.name
@@ -28,21 +33,13 @@ class Network(models.Model):
             destination.write(chunk)
         destination.close()
 
-    #Works with data sets
+    # Works with data sets
     def makeSupervisedDS(self, inp, target, inp_samples, target_samples):
         ds = SupervisedDataSet(inp, target)
         i = 0
         for _ in inp_samples:
             ds.addSample(tuple(inp_samples[i]), tuple(target_samples[i]))
             i += 1
-        return ds
-
-    def makeSequentialDS(self, inp, target, sequences):
-        ds = SequentialDataSet(inp, target)
-        for sequence in sequences:
-            for (inpt, tar) in zip(sequence, sequence[1:]):
-                ds.newSequence()
-                ds.appendLinked(inpt, tar)
         return ds
 
     def makeClassificationDS(self, inp, inp_samples, target_samples):
@@ -54,6 +51,7 @@ class Network(models.Model):
         ds._convertToOneOfMany()
         return ds
 
+    # Working with files
     def parseLine(self, line):
         res = []
         work = line.split(' ')
@@ -91,165 +89,347 @@ class Network(models.Model):
         self.inputs.close()
         return inpt, target
 
-    bias = [False, True]
-    recurrent = [False, True]
-    layers = ['GaussianLayer', 'LSTMLayer', 'SigmoidLayer', 'SoftmaxLayer', 'LinearLayer', 'TanhLayer']
+    def getURL(self):
+        return 'http://127.0.0.1:8000/ai/' + str(self.id)
 
-    def getTop3(self):
-        runs = SingleRun.objects.filter(net=self)
-        mins = [1., 1., 1.]
-        min_id = [0, 0, 0]
-        for run in runs:
-            if run.best_run < mins[0]:
-                mins[2] = mins[1]
-                mins[1] = mins[0]
-                mins[0] = run.best_run
-                min_id[2] = min_id[1]
-                min_id[1] = min_id[0]
-                min_id[0] = run.id
-            elif run.best_run < mins[1]:
-                mins[2] = mins[1]
-                mins[1] = run.best_run
-                min_id[2] = min_id[1]
-                min_id[1] = run.id
-            elif run.best_run < mins[2]:
-                mins[2] = run.best_run
-                min_id[2] = run.id
-        return min_id
-
-    def chk(self, processes):
-        isDone = False
-        toRemove = []
-        while not isDone:
-            flag = False
-            for tr in toRemove:
-                processes.remove(tr)
-                toRemove = []
-            for process in processes:
-                if process.is_alive():
-                    flag = True
-                else:
-                    toRemove.append(process)
-                    if flag:
-                        isDone = True
-        self.done = True
-        self.save()
-
-    def run(self):
+    # noinspection PyBroadException
+    def start(self):
         inp, tar = self.readFile()
         try:
-            os.mkdir('/home/mmaxy/PycharmProjects/coursework/files/errors/' + self.name + '/')
-            os.mkdir('/home/mmaxy/PycharmProjects/coursework/files/xmls/' + self.name + '/')
+            os.mkdir(settings.MEDIA_ROOT + 'xmls/' + str(self.id))
         except:
             pass
-        if self.sequential:
-            ds = self.makeSequentialDS(len(inp[0]), len(inp[0]), inp)
-            processes = []
-            for b in self.bias:
-                for r in self.recurrent:
-                    for hidden in self.layers:
-                        for out in self.layers:
-                            tmp = ds.copy()
-                            sr = SingleRun(bias=b,
-                                           recurrent=r,
-                                           hidden_layer=hidden,
-                                           output_layer=out,
-                                           name=str(1 + len(processes)),
-                                           net=self,
-                                           net_type='sequences')
-                            sr.save()
-                            p = multiprocessing.Process(target=sr.run, args=(tmp,))
-                            processes.append(p)
-                            p.start()
-            self.chk(processes)
+        try:
+            os.mkdir(settings.MEDIA_ROOT + 'matrix/' + str(self.id))
+        except:
+            pass
+        if self.typeDS == 'SV':
+            ds = self.makeSupervisedDS(len(inp[0]), len(tar[0]), inp, tar)
         else:
             ds = self.makeClassificationDS(len(inp[0]), inp, tar)
-            processes = []
-            for b in self.bias:
-                for r in self.recurrent:
-                    for hidden in self.layers:
-                        for out in self.layers:
-                            tmp = ds.copy()
-                            sr = SingleRun(bias=b,
-                                           recurrent=r,
-                                           hidden_layer=hidden,
-                                           output_layer=out,
-                                           name=str(1 + len(processes)),
-                                           net=self)
-                            p = multiprocessing.Process(target=sr.run, args=(tmp,))
-                            processes.append(p)
-                            p.start()
-            ds = self.makeSupervisedDS(len(inp[0]), len(tar[0]), inp, tar)
-            for b in self.bias:
-                for r in self.recurrent:
-                    for hidden in self.layers:
-                        for out in self.layers:
-                            tmp = ds.copy()
-                            sr = SingleRun(bias=b,
-                                           recurrent=r,
-                                           hidden_layer=hidden,
-                                           output_layer=out,
-                                           name=str(1 + len(processes)),
-                                           net=self)
-                            p = multiprocessing.Process(target=sr.run, args=(tmp,))
-                            processes.append(p)
-                            p.start()
-            self.chk(processes)
+        nameGA = len(GA.objects.filter(net=self)) + 1
+        ga = GA(net=self, name=nameGA, start=timezone.now())
+        ga.save()
+        p = multiprocessing.Process(target=ga.run,
+                                    args=(ds, self.epochCount, self.numberOfNeurons, self.populationSize,))
+        p.start()
 
 
-class SingleRun(models.Model):
-    net = models.ForeignKey(Network)
+class GA(models.Model):
+    net = models.ForeignKey(NN)
     name = models.CharField(max_length=50)
-    bias = models.BooleanField()
-    recurrent = models.BooleanField()
-    hidden_layer = models.CharField(max_length=50)
-    output_layer = models.CharField(max_length=50)
-    net_type = models.CharField(max_length=50)
-    error_log = models.FileField(upload_to='media/errors/')
-    ready_xml = models.FileField(upload_to='media/xmls/')
-    best_run = models.FloatField(null=True, blank=True)
-    total_runs = models.IntegerField(blank=True, null=True)
+    start = models.DateTimeField()
+    populations = models.PositiveIntegerField(null=True, blank=True)
+    networks = 0
 
-    layer = {'GaussianLayer': GaussianLayer, 'LSTMLayer': LSTMLayer, 'SigmoidLayer': SigmoidLayer,
-             'SoftmaxLayer': SoftmaxLayer, 'LinearLayer': LinearLayer, 'TanhLayer': TanhLayer}
-
-    def createNetwork(self, inpt, hidden, target):
-        n = buildNetwork(inpt, hidden, target, hiddenclass=self.layer[self.hidden_layer],
-                         outclass=self.layer[self.output_layer], bias=self.bias, recurrent=self.recurrent)
-        return n
-
-    def train(self, net, ds):
-        trainer = BackpropTrainer(net, ds)
-        out = trainer.trainUntilConvergence(maxEpochs=500)
-        return out
+    func = [GaussianLayer, SigmoidLayer, SoftmaxLayer, LinearLayer, TanhLayer, LSTMLayer]
 
     def getURL(self):
-        return 'http://127.0.0.1:8000/media/xmls/' + self.net.name + '/' + self.name
+        return 'http://127.0.0.1:8000/ai/' + str(self.net.id) + '/' + str(self.name)
 
-    def run(self, ds):
-        if self.net_type == 'classification':
-            n = self.createNetwork(len(ds['input'][0]),
-                                   int(1.5 * len(ds['input'][0])),
-                                   1)
-        elif self.net_type == 'sequences':
-            n = self.createNetwork(len(ds['input'][0]),
-                                   int(1.3 * (len(ds['input'][0]) + len(ds['target'][0]))),
-                                   len(ds['target'][0]))
+    def fillConnections(self, net, addedStack, stackToGo, layers):
+        connections = []
+        recurrentConnections = []
+        if len(stackToGo) == 0:
+            return connections, recurrentConnections
+        ways = []
+        futureStack = []
+        for neuron in stackToGo:
+            way = []
+            for w in ways:
+                if w.count(neuron) != 0:
+                    way = w
+                else:
+                    continue
+            if not way:
+                way.append(neuron)
+                ways.append(way)
+            for connection in range(len(net[neuron])):
+                if net[neuron][connection] == 1:
+                    if addedStack.count(connection) != 0:
+                        recurrentConnections.append(FullConnection(layers[neuron], layers[connection]))
+                    else:
+                        if stackToGo.count(connection) != 0:
+                            if way.count(connection) != 0:
+                                recurrentConnections.append(FullConnection(layers[neuron], layers[connection]))
+                            else:
+                                flag = True
+                                for w in ways:
+                                    if w.count(connection) != 0:
+                                        connections.append(FullConnection(layers[neuron], layers[connection]))
+                                        for n in w:
+                                            way.append(n)
+                                        ways.pop(ways.index(w))
+                                        flag = False
+                                        break
+                                    else:
+                                        continue
+                                if flag:
+                                    way.append(connection)
+                                    connections.append(FullConnection(layers[neuron], layers[connection]))
+                        else:
+                            connections.append(FullConnection(layers[neuron], layers[connection]))
+                            futureStack.append(connection)
+                else:
+                    continue
+        for v in stackToGo:
+            addedStack.append(v)
+        c, rc = self.fillConnections(net, addedStack, futureStack, layers)
+        for con in c:
+            connections.append(con)
+        for rcon in rc:
+            recurrentConnections.append(rcon)
+        return connections, recurrentConnections
+
+    def buildNN(self, net, functions, inp, out):
+        layers = []
+
+        inLayer = self.func[functions[0]](inp)
+        layers.append(inLayer)
+        outLayer = self.func[functions[-1]](out)
+
+        for neural in range(1, len(net) - 1):
+            layers.append(self.func[functions[neural]](1))
+        layers.append(outLayer)
+
+        connections, recConnections = self.fillConnections(net, [], [0], layers)
+        if len(recConnections) == 0:
+            n = FeedForwardNetwork()
         else:
-            n = self.createNetwork(len(ds['input'][0]),
-                                   int(1.3 * (len(ds['input'][0]) + len(ds['target'][0]))),
-                                   len(ds['target'][0]))
-        out = self.train(n, ds)
-        self.best_run = min(out[0])
-        self.total_runs = len(out[0])
-        #self.error_log.path = 'media/errors/' + self.net.name + '/' + self.name
-        #self.ready_xml.path = 'media/xmls/' + self.net.name + '/' + self.name
-        error = open('/home/mmaxy/PycharmProjects/coursework/files/errors/' + self.net.name + '/' + self.name, 'wb')
-        for s in out[0]:
-            error.write(str(s))
-            error.write('\n')
-        error.close()
-        xml = open('/home/mmaxy/PycharmProjects/coursework/files/xmls/' + self.net.name + '/' + self.name, 'w')
+            n = RecurrentNetwork()
+        n.addInputModule(inLayer)
+        for layer in range(1, len(layers) - 1):
+            n.addModule(layers[layer])
+        n.addOutputModule(outLayer)
+
+        for con in connections:
+            n.addConnection(con)
+        for rcon in recConnections:
+            n.addRecurrentConnection(rcon)
+        n.sortModules()
+        return n
+
+    def mutateFunc(self, functions, rate):
+        result = []
+        for f in range(len(functions)):
+            if random() < rate:
+                result.append(int(round(random() * (len(self.func) - 0.5))))
+            else:
+                result.append(functions[f])
+        return result
+
+    def mutateMatrix(self, matrix, rate):
+        result = []
+        for i in range(len(matrix)):
+            tmp = []
+            for j in range(len(matrix[i])):
+                if random() < rate:
+                    tmp.append(int(round(random())))
+                else:
+                    tmp.append(matrix[i][j])
+            result.append(tmp)
+        if result[0].count(1) == 0:
+            result = self.mutateMatrix(matrix, rate)
+        return result
+
+    def initChild(self, length):
+        res = []
+        for i in range(length):
+            tmp = []
+            for j in range(length):
+                tmp.append(0)
+            res.append(tmp)
+        return res
+
+    def crossNet(self, motherMatrix, motherFunc, fatherMatrix, fatherFunc):
+        length = len(motherMatrix[0]) ** 2
+        motherPart = round(length * random())
+        probability = motherPart / length
+        child = self.initChild(len(motherMatrix))
+        childFunc = []
+        for i in range(len(fatherMatrix)):
+            mother = random() < probability
+            if mother:
+                childFunc.append(motherFunc[i])
+            else:
+                childFunc.append(fatherFunc[i])
+            for j in range(len(motherMatrix[i])):
+                if mother:
+                    child[i][j] = motherMatrix[i][j]
+                else:
+                    child[i][j] = fatherMatrix[i][j]
+        if child[0].count(1) == 0:
+            pass
+        return [child, childFunc]
+
+    def init(self, popSize, matrixSize):
+        population = []
+        for i in range(popSize):
+            matrix = []
+            function = []
+            for neuron in range(matrixSize):
+                tmp = []
+                function.append(int(round(random() * (len(self.func) - 0.5))))
+                for con in range(matrixSize):
+                    if random() < 0.5:
+                        tmp.append(1)
+                    else:
+                        tmp.append(0)
+                matrix.append(tmp)
+            population.append([matrix, function])
+        return population
+
+    # noinspection PyBroadException
+    def run(self, trnDS, epochs, neuronsCount, popSize):
+        try:
+            os.mkdir(settings.MEDIA_ROOT + 'xmls/' + str(self.net.id) + '/' + str(self.name))
+        except:
+            pass
+        try:
+            os.mkdir(settings.MEDIA_ROOT + 'matrix/' + str(self.net.id) + '/' + str(self.name))
+        except:
+            pass
+        population = self.init(popSize, neuronsCount)
+        proportion = []
+        for i in range(1, popSize + 1):
+            proportion.append(i ** 2)
+        summ = sum(proportion)
+        self.runEvol(epochs, trnDS, popSize, summ, proportion, population, 0)
+
+    def generateNewPop(self, popSize, summ, proportion, population, rang):
+        newPopulation = []
+        for child in range(popSize):
+            rand = int(round(random() * summ))
+            already = 0
+            for prop in proportion:
+                if rand <= already + prop:
+                    motherIndex = int(math.sqrt(prop))
+                    break
+                else:
+                    already = already + prop
+            rand = int(round(random() * summ))
+            already = 0
+            for prop in proportion:
+                if rand <= already + prop:
+                    fatherIndex = int(math.sqrt(prop))
+                    break
+                else:
+                    already = already + prop
+            motherMatrix = population[rang[-motherIndex]][0]
+            motherFunc = population[rang[-motherIndex]][1]
+            fatherMatrix = population[rang[-fatherIndex]][0]
+            fatherFunc = population[rang[-fatherIndex]][1]
+            childToAdd = self.crossNet(motherMatrix, motherFunc, fatherMatrix, fatherFunc)
+            if random() < 0.5:
+                childToAdd[0] = self.mutateMatrix(childToAdd[0], 0.4)
+                childToAdd[1] = self.mutateFunc(childToAdd[1], 0.4)
+            newPopulation.append(childToAdd)
+        return newPopulation
+
+    def runEvol(self, epochs, trnDS, popSize, summ, proportion, population, currentEpoch):
+        if currentEpoch != epochs:
+            net = []
+            survivalRate = []
+            for p in population:
+                #TODO multyproc
+                net.append(self.buildNN(p[0], p[1], len(trnDS['input'][0]), len(trnDS['target'][0])))
+                netName = len(Network.objects.filter(net=self.id))
+                network = Network(net=self, name=netName, population=currentEpoch)
+                network.save()
+                self.networks = netName + 1
+                res = network.run(net[-1], trnDS, [p[1], p[0]])
+                survivalRate.append(res)
+            rang = []
+            for sr in range(len(survivalRate)):
+                rang.append(survivalRate.index(min(survivalRate)))
+                survivalRate[rang[-1]] = 101
+            population = self.generateNewPop(popSize, summ, proportion, population, rang)
+            self.runEvol(epochs, trnDS, popSize, summ, proportion, population, currentEpoch + 1)
+        else:
+            pass
+
+    def getNetworksNumber(self):
+        return self.networks
+
+
+class Network(models.Model):
+    net = models.ForeignKey(GA)
+    name = models.CharField(max_length=50)
+    population = models.PositiveIntegerField()
+    best_run = models.FloatField(null=True, blank=True)
+
+    def train(self, net, ds):
+        try:
+            trainer = BackpropTrainer(net, ds)
+            out = trainer.trainUntilConvergence(maxEpochs=350)
+        except:
+            out = [[101]]
+            pass
+        return min(out[0])
+
+    def getXmlURL(self):
+        return 'http://127.0.0.1:8000/media/xmls/' + str(self.net.net.id) + '/' + str(self.net.name) + '/' + str(
+            self.name)
+
+    def getURL(self):
+        return 'http://127.0.0.1:8000/ai/' + str(self.net.net.id) + '/' + str(self.net.name) + '/' + str(self.name)
+
+    def getMatrix(self):
+        res = []
+        f = open(
+            settings.MEDIA_ROOT + 'matrix/' + str(self.net.net.id) + '/' + str(self.net.name) + '/' + str(self.name),
+            mode='rb')
+        line = f.readline()
+        functions = line.split(', ')
+        res.append(functions)
+        line = f.readline()
+        matrix = []
+        while True:
+            if not line:
+                break
+            tmp = line.split(', ')
+            matrix.append(tmp)
+            line = f.readline()
+        f.close()
+        res.append(matrix)
+        return res
+
+    # noinspection PyBroadException
+    def saveMatrix(self, data):
+        try:
+            os.mkdir(settings.MEDIA_ROOT + 'matrix/' + str(self.net.net.id) + '/' + str(self.net.name))
+        except:
+            pass
+        f = open(
+            settings.MEDIA_ROOT + 'matrix/' + str(self.net.net.id) + '/' + str(self.net.name) + '/' + str(self.name),
+            'w')
+        write = ''
+        for d in range(len(data[0]) - 1):
+            write += str(data[0][d]) + ', '
+        write += str(data[0][len(data[0]) - 1]) + '\n'
+        f.write(write)
+        f.write('\n')
+
+        write = ''
+        for i in range(len(data[1])):
+            for d in range(len(data[1][i]) - 1):
+                write += str(data[1][i]) + ', '
+            write += str(data[1][len(data[1][i]) - 1])
+            write += '\n'
+        f.write(write)
+        f.close()
+
+    def run(self, n, ds, data):
+        try:
+            os.mkdir(settings.MEDIA_ROOT + 'xmls/' + str(self.net.net.id) + '/' + str(self.net.name))
+        except:
+            pass
+        self.saveMatrix(data)
+        self.best_run = self.train(n, ds.copy())
+        xml = open(
+            settings.MEDIA_ROOT + 'xmls/' + str(self.net.net.id) + '/' + str(self.net.name) + '/' + str(self.name), 'w')
         pickle.dump(n, xml)
         xml.close()
+
         self.save()
+        return self.best_run

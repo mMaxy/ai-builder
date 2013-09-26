@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Details of {{ nn.name }} - version {{ ga.name }}</title>
+</head>
+<body>
+<a href="{% url 'ai.views.index' %}">В начало</a>
+
+<a href="{{ nn.getURL }}">Вверх</a>
+
+<h1>
+    {{ nn.name }} - version {{ ga.name }}
+</h1>
+
+{% for n in networks %}
+    <a href="{{ n.getURL }}">
+        {{ n.name }}, population number: {{ n.population }}, best_run: {{ n.best_run }}
+    </a>
+{% endfor %}
+
+
+</body>
+</html>

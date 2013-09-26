@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Details of {{ nn.name }} - version {{ ga.name }} - network number {{ network.name }}</title>
+</head>
+<body>
+<a href="{{ ga.getURL }}">
+    Вверх
+</a>
+
+<p>
+    {{ network.getMatrix }}
+</p>
+
+<p>
+    Best run: {{ network.best_run }}
+</p>
+
+<p>
+    Population number: {{ network.population }}
+</p>
+</body>
+</html>

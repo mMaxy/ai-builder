@@ -8,33 +8,48 @@ from django.core.urlresolvers import reverse
 from django.template import Context, RequestContext
 
 from ai.forms import UploadFileForm
-from ai.models import Network, SingleRun
+from ai.models import NN, GA, Network
 
 
 def index(request):
-    context = Context()
-    return render(request, 'ai/index.html', context)
+    #context = Context()
+    nw = NN.objects.all()
+    return render(request, 'ai/index.html', {'nw': nw})
 
 
 def details(request, nw_id):
-    nw = get_object_or_404(Network, pk=nw_id)
-    if nw.done:
-        top3 = nw.getTop3()
-        sr1 = get_object_or_404(SingleRun, pk=top3[0])
-        sr2 = get_object_or_404(SingleRun, pk=top3[1])
-        sr3 = get_object_or_404(SingleRun, pk=top3[2])
-        return render(request, 'ai/details.html', {'network': nw, 'sr1': sr1, 'sr2': sr2, 'sr3': sr3})
-    else:
-        return render(request, 'ai/details.html', {'network': nw})
+    nw = get_object_or_404(NN, pk=nw_id)
+    gas = GA.objects.filter(net=nw_id)
+    return render(request, 'ai/details.html', {'network': nw, 'gas': gas})
+
+
+def detailsGA(request, nw_id, ga_id):
+    nn = get_object_or_404(NN, pk=nw_id)
+    ga = GA.objects.filter(net=nn.id).get(name=ga_id)
+    networks = list(Network.objects.filter(net=ga.id))
+    return render(request, 'ai/details_ga.html', {'ga': ga, 'nn': nn, 'networks': networks})
+
+
+def detailNetwork(request, nw_id, ga_id, net_id):
+    nn = get_object_or_404(NN, pk=nw_id)
+    ga = GA.objects.filter(net=nn.id).get(name=ga_id)
+    network = Network.objects.filter(net=ga.id).get(name=net_id)
+    return render(request, 'ai/detail_net.html', {'ga': ga, 'nn': nn, 'network': network})
 
 
 def upload(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
-            network = Network(name=request.POST['title'], date=timezone.now(), inputs=request.FILES['file'])
+            network = NN(name=request.POST['title'],
+                         date=timezone.now(),
+                         inputs=request.FILES['file'],
+                         typeDS=request.POST['typeDS'],
+                         populationSize=int(request.POST['populationSize']),
+                         numberOfNeurons=int(request.POST['numberOfNeurons']),
+                         epochCount=int(request.POST['epochCount']))
             network.save()
-            p = multiprocessing.Process(target=network.run, args=())
+            p = multiprocessing.Process(target=network.start, args=())
             p.start()
             # Redirect to the document list after POST
             return HttpResponseRedirect(reverse('ai.views.details', args=(network.id,)))

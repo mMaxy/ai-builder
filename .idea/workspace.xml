@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25494cb8-8a05-44a7-936b-895142bf8f42" name="Default" comment="Course work">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ai/templates/ai/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/documents/First" afterPath="$PROJECT_DIR$/files/documents/First" />
+    <list default="true" id="25494cb8-8a05-44a7-936b-895142bf8f42" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ai/templates/ai/detail_net.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ai/templates/ai/details_ga.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/documents/Anketa_posetitelya_kofeyni_Starbucks.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/documents/NVIDIA-Linux-x86_64-310.44.run" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/templates/ai/details.html" afterPath="$PROJECT_DIR$/ai/templates/ai/details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/forms.py" afterPath="$PROJECT_DIR$/ai/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/templates/ai/index.html" afterPath="$PROJECT_DIR$/ai/templates/ai/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/models.py" afterPath="$PROJECT_DIR$/ai/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neurals.db" afterPath="$PROJECT_DIR$/neurals.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coursework/settings.py" afterPath="$PROJECT_DIR$/coursework/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/templates/ai/upload.html" afterPath="$PROJECT_DIR$/ai/templates/ai/upload.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/urls.py" afterPath="$PROJECT_DIR$/ai/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/views.py" afterPath="$PROJECT_DIR$/ai/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="coursework.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/settings.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1368168906293" ignored="false" />
-    <file path="/models.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1368747454392" ignored="false" />
-    <file path="/Django Console" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1368746086649" ignored="false" />
-    <file path="/urls.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1368521100554" ignored="false" />
-    <file path="/views.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1368748133636" ignored="false" />
-    <file path="/index.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1368749253300" ignored="false" />
-    <file path="/details.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1368749317566" ignored="false" />
-    <file path="/forms.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1368520558094" ignored="false" />
-    <file path="/upload.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1368724043716" ignored="false" />
-    <file path="/Dummy.txt" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1370812076658" ignored="false" />
+    <file path="/models.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380179854633" ignored="false" />
+    <file path="/Django Console" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380142326383" ignored="false" />
+    <file path="/urls.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380173776487" ignored="false" />
+    <file path="/views.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380181503796" ignored="false" />
+    <file path="/index.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380171700043" ignored="false" />
+    <file path="/details.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380168984707" ignored="false" />
+    <file path="/forms.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380172926426" ignored="false" />
+    <file path="/upload.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380155713430" ignored="false" />
+    <file path="/Dummy.txt" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380179424440" ignored="false" />
+    <file path="/a.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380128919571" ignored="false" />
+    <file path="/start_script.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380128937501" ignored="false" />
+    <file path="/detailsga.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380169797903" ignored="false" />
+    <file path="/detail_net.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380171431477" ignored="false" />
+    <file path="/details_ga.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380172222945" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,27 +55,27 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="233" column="22" selection-start="8910" selection-end="8910" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upload.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ai/templates/ai/upload.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="9" selection-start="351" selection-end="351" vertical-scroll-proportion="0.38251367">
+            <state line="353" column="0" selection-start="13163" selection-end="13163" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="45" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0">
+            <state line="39" column="20" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.111801244">
+              <folding>
+                <element signature="e#26#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail_net.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ai/templates/ai/detail_net.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="18" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -78,7 +84,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/templates/ai/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="64" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
+            <state line="15" column="20" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -87,25 +93,25 @@
       <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="14" column="61" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ai/templates/ai/details.html">
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ai/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="7" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
+            <state line="11" column="53" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ai/templates/ai/base.html">
+      <file leaf-file-name="details_ga.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ai/templates/ai/details_ga.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="10" column="4" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,16 +137,19 @@
       <list>
         <option value="$PROJECT_DIR$/ai/admin.py" />
         <option value="$PROJECT_DIR$/templates/ai.html" />
-        <option value="$PROJECT_DIR$/ai/forms.py" />
         <option value="$PROJECT_DIR$/coursework/urls.py" />
-        <option value="$PROJECT_DIR$/ai/urls.py" />
-        <option value="$PROJECT_DIR$/ai/templates/ai/upload.html" />
         <option value="$PROJECT_DIR$/ai/templates/ai/base.html" />
         <option value="$PROJECT_DIR$/coursework/settings.py" />
-        <option value="$PROJECT_DIR$/ai/views.py" />
-        <option value="$PROJECT_DIR$/ai/templates/ai/index.html" />
+        <option value="$PROJECT_DIR$/ai/templates/ai/upload.html" />
         <option value="$PROJECT_DIR$/ai/templates/ai/details.html" />
+        <option value="$PROJECT_DIR$/ai/templates/ai/detailsga.html" />
+        <option value="$PROJECT_DIR$/ai/templates/ai/detail_net.html" />
+        <option value="$PROJECT_DIR$/ai/templates/ai/index.html" />
+        <option value="$PROJECT_DIR$/ai/templates/ai/details_ga.html" />
+        <option value="$PROJECT_DIR$/ai/forms.py" />
+        <option value="$PROJECT_DIR$/ai/urls.py" />
         <option value="$PROJECT_DIR$/ai/models.py" />
+        <option value="$PROJECT_DIR$/ai/views.py" />
       </list>
     </option>
   </component>
@@ -149,6 +158,22 @@
     <option name="y" value="25" />
     <option name="width" value="1372" />
     <option name="height" value="745" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Buildout</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -219,24 +244,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="files" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="documents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coursework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coursework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="coursework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -285,7 +292,8 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="appearance" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="last.edited.regexp" value="" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="dynamic.classpath" value="false" />
@@ -299,7 +307,10 @@
       </PyConsoleSettings>
     </option>
     <option name="myDjangoConsoleState">
-      <PyConsoleSettings />
+      <PyConsoleSettings>
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="coursework" />
+      </PyConsoleSettings>
     </option>
   </component>
   <component name="RunManager" selected="Django server.coursework">
@@ -405,7 +416,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="coursework.settings" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -454,6 +465,11 @@
       <created>1368002346091</created>
       <updated>1368002346091</updated>
     </task>
+    <task id="LOCAL-00001" summary="Course work">
+      <created>1370812135138</created>
+      <updated>1370812135138</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -480,21 +496,21 @@
     <frame x="-3" y="25" width="1372" height="745" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17427702" sideWeight="0.6756303" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2128788" sideWeight="0.67111856" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24621212" sideWeight="0.5790349" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933443" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2888147" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42096505" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327787" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294509" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -505,7 +521,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
       <value>
@@ -544,7 +560,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
     <option name="LAST_COMMIT_MESSAGE" value="Course work" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -560,112 +576,127 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="14" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/files/errors/firstTest/10">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/errors/firstTest/9">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/errors/firstTest/8">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/errors/firstTest/6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/errors/firstTest/5">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/errors/firstTest/1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/coursework/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="10" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0">
+        <state line="47" column="11" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/templates/ai/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/templates/ai/details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="7" selection-start="315" selection-end="315" vertical-scroll-proportion="0.51724136" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/templates/ai/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="7" selection-start="346" selection-end="346" vertical-scroll-proportion="0.35390198" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/db/models/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="500" column="0" selection-start="22078" selection-end="22078" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/forms.py">
+    <entry file="file:///usr/lib/python2.7/multiprocessing/process.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="277" column="0" selection-start="8213" selection-end="8213" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/views.py">
+    <entry file="file:///usr/lib/python2.7/multiprocessing/forking.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="45" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0">
+        <state line="124" column="0" selection-start="4089" selection-end="4089" vertical-scroll-proportion="0.18772563" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.1-py2.7.egg/pybrain/datasets/dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="0" selection-start="1417" selection-end="1417" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="53" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/templates/ai/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="64" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
+        <state line="15" column="20" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/templates/ai/details.html">
+    <entry file="file://$PROJECT_DIR$/ai/templates/ai/details_ga.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="7" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
+        <state line="10" column="4" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/templates/ai/detail_net.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="18" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="61" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="233" column="22" selection-start="8910" selection-end="8910" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/templates/ai/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="9" selection-start="351" selection-end="351" vertical-scroll-proportion="0.38251367">
+        <state line="353" column="0" selection-start="13163" selection-end="13163" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="0" selection-start="4779" selection-end="4779" vertical-scroll-proportion="0.3313433">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="20" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.111801244">
+          <folding>
+            <element signature="e#26#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 
