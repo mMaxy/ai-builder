@@ -28,12 +28,14 @@ class NN(models.Model):
         return self.name
 
     def getCompletion(self):
-        a = []
-        #TODO count done
-        return 60
+        arr = list(GA.objects.filter(net=self.id))
+        summ = 0
+        for ga in arr:
+            summ += ga.getCompletion()
+        return int((summ / (len(arr) * self.populationSize * self.epochCount)) * 100)
 
     def anotherGeneration(self):
-        a = []
+        self.start()
 
     def handle_uploaded_file(self, f):
         destination = open(self.inputs.__str__(), 'wb+')
@@ -116,7 +118,7 @@ class NN(models.Model):
         else:
             ds = self.makeClassificationDS(len(inp[0]), inp, tar)
         nameGA = len(GA.objects.filter(net=self)) + 1
-        ga = GA(net=self, name=nameGA, start=timezone.now())
+        ga = GA(net=self, name=nameGA, start=timezone.now(), networks=(self.epochCount * self.populationSize))
         ga.save()
         p = multiprocessing.Process(target=ga.run,
                                     args=(ds, self.epochCount, self.numberOfNeurons, self.populationSize,))
@@ -128,13 +130,15 @@ class GA(models.Model):
     name = models.CharField(max_length=50)
     start = models.DateTimeField()
     populations = models.PositiveIntegerField(null=True, blank=True)
-    networks = 0
+    networks = models.PositiveIntegerField()
 
     func = [GaussianLayer, SigmoidLayer, SoftmaxLayer, LinearLayer, TanhLayer]
 
     def getCompletion(self):
-        a = []
-        return 25
+        a = self.networks
+        b = len(list(Network.objects.filter(net=self.id)))
+        res = 100. * b / a
+        return res
 
     def getURL(self):
         return 'http://127.0.0.1:8000/ai/' + str(self.net.id) + '/' + str(self.name)
@@ -345,10 +349,9 @@ class GA(models.Model):
             for p in population:
                 #TODO multyproc
                 net.append(self.buildNN(p[0], p[1], len(trnDS['input'][0]), len(trnDS['target'][0])))
-                netName = len(Network.objects.filter(net=self.id))
+                netName = len(Network.objects.filter(net=self.id)) + 1
                 network = Network(net=self, name=netName, population=currentEpoch)
                 network.save()
-                self.networks = netName + 1
                 res = network.run(net[-1], trnDS, [p[1], p[0]])
                 survivalRate.append(res)
             rang = []
@@ -360,9 +363,6 @@ class GA(models.Model):
         else:
             pass
 
-    def getNetworksNumber(self):
-        return self.networks
-
 
 class Network(models.Model):
     net = models.ForeignKey(GA)
@@ -370,14 +370,21 @@ class Network(models.Model):
     population = models.PositiveIntegerField()
     best_run = models.FloatField(null=True, blank=True)
 
+    func = ['GaussianLayer', 'SigmoidLayer', 'SoftmaxLayer', 'LinearLayer', 'TanhLayer']
+
+    # noinspection PyBroadException
     def train(self, net, ds):
         try:
             trainer = BackpropTrainer(net, ds)
             out = trainer.trainUntilConvergence(maxEpochs=350)
         except:
-            out = [[101]]
+            out = [[101.], [101.]]
             pass
-        return min(out[0])
+        return (min(out[0]) + min(out[1])) / 2
+
+    def getMatrixURL(self):
+        return 'http://127.0.0.1:8000/media/matrix/' + str(self.net.net.id) + '/' + str(self.net.name) + '/' + str(
+            self.name)
 
     def getXmlURL(self):
         return 'http://127.0.0.1:8000/media/xmls/' + str(self.net.net.id) + '/' + str(self.net.name) + '/' + str(
@@ -393,17 +400,41 @@ class Network(models.Model):
             mode='rb')
         line = f.readline()
         functions = line.split(', ')
-        res.append(functions)
+        r = []
+        for l in functions:
+            r.append(int(l.replace('\n', '')))
+        res.append(r)
         line = f.readline()
         matrix = []
         while True:
             if not line:
                 break
             tmp = line.split(', ')
-            matrix.append(tmp)
+            r = []
+            for t in tmp:
+                r.append(int(t.replace('\n', '')))
+            matrix.append(r)
             line = f.readline()
         f.close()
         res.append(matrix)
+        return res
+
+    def getMat(self):
+        return self.getMatrix()[1]
+
+    def getMatSize(self):
+        return len(self.getMat)
+
+    def getFunc(self):
+        return self.getMatrix()[0]
+
+    def getFuncText(self):
+        res = ''
+        functions = self.getFunc()
+        i = 0
+        for f in functions:
+            res += '' + str(i) + ': ' + self.func[f] + ', '
+            i += 1
         return res
 
     # noinspection PyBroadException
@@ -418,25 +449,28 @@ class Network(models.Model):
         write = ''
         for d in range(len(data[0]) - 1):
             write += str(data[0][d]) + ', '
-        write += str(data[0][len(data[0]) - 1]) + '\n'
-        f.write(write)
-        f.write('\n')
+        write += str(data[0][len(data[0]) - 1])
 
-        write = ''
+        write += os.linesep
+
         for i in range(len(data[1])):
             for d in range(len(data[1][i]) - 1):
-                write += str(data[1][i]) + ', '
-            write += str(data[1][len(data[1][i]) - 1])
-            write += '\n'
+                write += str(data[1][i][d]) + ', '
+            write += str(data[1][i][len(data[1][i]) - 1])
+            write += os.linesep
+
         f.write(write)
         f.close()
 
+    # noinspection PyBroadException
     def run(self, n, ds, data):
         try:
             os.mkdir(settings.MEDIA_ROOT + 'xmls/' + str(self.net.net.id) + '/' + str(self.net.name))
         except:
             pass
-        self.saveMatrix(data)
+        p = multiprocessing.Process(target=self.saveMatrix,
+                                    args=(data,))
+        p.start()
         self.best_run = self.train(n, ds.copy())
         xml = open(
             settings.MEDIA_ROOT + 'xmls/' + str(self.net.net.id) + '/' + str(self.net.name) + '/' + str(self.name), 'w')
