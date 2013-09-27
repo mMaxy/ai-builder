@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25494cb8-8a05-44a7-936b-895142bf8f42" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/templates/ai/detail_net.html" afterPath="$PROJECT_DIR$/ai/templates/ai/detail_net.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/templates/ai/details_ga.html" afterPath="$PROJECT_DIR$/ai/templates/ai/details_ga.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/templates/ai/index.html" afterPath="$PROJECT_DIR$/ai/templates/ai/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/models.py" afterPath="$PROJECT_DIR$/ai/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neurals.db" afterPath="$PROJECT_DIR$/neurals.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ai/templates/ai/upload.html" afterPath="$PROJECT_DIR$/ai/templates/ai/upload.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="coursework.iws" />
@@ -19,8 +15,8 @@
     <file path="/index.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380228971086" ignored="false" />
     <file path="/details.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380248955273" ignored="false" />
     <file path="/forms.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380172926426" ignored="false" />
-    <file path="/upload.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380155713430" ignored="false" />
-    <file path="/Dummy.txt" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380236270120" ignored="false" />
+    <file path="/upload.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380249388016" ignored="false" />
+    <file path="/Dummy.txt" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380249083456" ignored="false" />
     <file path="/a.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380128919571" ignored="false" />
     <file path="/start_script.py" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380128937501" ignored="false" />
     <file path="/detailsga.html" changelist="25494cb8-8a05-44a7-936b-895142bf8f42" time="1380169797903" ignored="false" />
@@ -48,7 +44,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="385" column="50" selection-start="14269" selection-end="14269" vertical-scroll-proportion="0.0">
+            <state line="385" column="50" selection-start="14271" selection-end="14271" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -68,16 +64,16 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/templates/ai/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="13" selection-start="3500" selection-end="3500" vertical-scroll-proportion="-16.625">
+            <state line="116" column="6" selection-start="1660" selection-end="3892" vertical-scroll-proportion="-10.25">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details_ga.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="details_ga.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/templates/ai/details_ga.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="34" selection-start="1359" selection-end="1359" vertical-scroll-proportion="1.745098">
+            <state line="37" column="34" selection-start="1359" selection-end="1359" vertical-scroll-proportion="3.125">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -85,10 +81,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="upload.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ai/templates/ai/upload.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="24" selection-start="1748" selection-end="1748" vertical-scroll-proportion="0.3137255">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="details.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/templates/ai/details.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="32" selection-start="1328" selection-end="1328" vertical-scroll-proportion="-6.875">
+            <state line="51" column="42" selection-start="1675" selection-end="1698" vertical-scroll-proportion="-8.75">
               <folding />
             </state>
           </provider>
@@ -106,7 +111,7 @@
       <file leaf-file-name="detail_net.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/templates/ai/detail_net.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="34" selection-start="1391" selection-end="1391" vertical-scroll-proportion="-7.5">
+            <state line="36" column="34" selection-start="1391" selection-end="1391" vertical-scroll-proportion="2.25">
               <folding />
             </state>
           </provider>
@@ -147,13 +152,13 @@
         <option value="$PROJECT_DIR$/ai/templates/ai/detailsga.html" />
         <option value="$PROJECT_DIR$/ai/forms.py" />
         <option value="$PROJECT_DIR$/ai/urls.py" />
-        <option value="$PROJECT_DIR$/ai/templates/ai/upload.html" />
         <option value="$PROJECT_DIR$/ai/views.py" />
         <option value="$PROJECT_DIR$/ai/templates/ai/index.html" />
         <option value="$PROJECT_DIR$/ai/models.py" />
         <option value="$PROJECT_DIR$/ai/templates/ai/detail_net.html" />
         <option value="$PROJECT_DIR$/ai/templates/ai/details.html" />
         <option value="$PROJECT_DIR$/ai/templates/ai/details_ga.html" />
+        <option value="$PROJECT_DIR$/ai/templates/ai/upload.html" />
       </list>
     </option>
   </component>
@@ -496,7 +501,11 @@
       <created>1380236278508</created>
       <updated>1380236278509</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Release 1.0">
+      <created>1380249088456</created>
+      <updated>1380249088456</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -585,7 +594,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="gui, except neurals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Release 1.0" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -603,6 +612,7 @@
     <MESSAGE value="Переделал все, нормальный генетический алгоритм, пропала параллельность" />
     <MESSAGE value="Слил" />
     <MESSAGE value="gui, except neurals" />
+    <MESSAGE value="Release 1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -649,20 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/templates/ai/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="20" selection-start="318" selection-end="318" vertical-scroll-proportion="-6.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/templates/ai/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="13" selection-start="3500" selection-end="3500" vertical-scroll-proportion="-16.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ai/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="97" selection-start="454" selection-end="464" vertical-scroll-proportion="0.0">
@@ -681,7 +677,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="385" column="50" selection-start="14269" selection-end="14269" vertical-scroll-proportion="0.0">
+        <state line="385" column="50" selection-start="14271" selection-end="14271" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -695,24 +691,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/templates/ai/detail_net.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="34" selection-start="1391" selection-end="1391" vertical-scroll-proportion="-7.5">
+        <state line="36" column="34" selection-start="1391" selection-end="1391" vertical-scroll-proportion="2.25">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/templates/ai/details.html">
+    <entry file="file://$PROJECT_DIR$/ai/templates/ai/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="32" selection-start="1328" selection-end="1328" vertical-scroll-proportion="-6.875">
+        <state line="116" column="6" selection-start="1660" selection-end="3892" vertical-scroll-proportion="-10.25">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/templates/ai/details_ga.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="34" selection-start="1359" selection-end="1359" vertical-scroll-proportion="1.745098">
+        <state line="37" column="34" selection-start="1359" selection-end="1359" vertical-scroll-proportion="3.125">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/templates/ai/details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="42" selection-start="1675" selection-end="1698" vertical-scroll-proportion="-8.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/templates/ai/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="24" selection-start="1748" selection-end="1748" vertical-scroll-proportion="0.3137255">
+          <folding />
         </state>
       </provider>
     </entry>
